@@ -36,17 +36,12 @@ namespace TestProjectMobiele.ViewModels
                   NavigationService.NavigateAsync("FotosKleutersPage");
              });
 
-            Kleuter k = new Kleuter
+            PreFab preFab = new PreFab();
+            foreach(Kleuter k in preFab.ReturnKleuters())
             {
-                KleuterID = 0,
-                VoorNaam = "Daan",
-                Naam = "Vandebosch",
-                SchoolID = 2,
-                FotoPad = "FotoString",
-                GezinsID = 4,
-                KlasID = 6
-            };
-            dataConnection.SaveItemAsync(k);
+                dataConnection.SaveItemAsync(k);
+            }
+
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
         }
        
