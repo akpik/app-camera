@@ -18,7 +18,7 @@ namespace TestProjectMobieles.Data
 
         public DataConnection(IFileHelper fileHelper)
         {
-            string databasePath = fileHelper.GetLocalFilePath("TodoSQLite.db3");
+            string databasePath = fileHelper.GetLocalFilePath("TodoSQLite2.db3");
             connectionString = string.Format("Filename={0}", databasePath);
 
             Database.EnsureCreated();
