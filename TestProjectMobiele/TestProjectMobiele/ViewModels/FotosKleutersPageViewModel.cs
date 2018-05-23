@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -17,13 +18,14 @@ namespace TestProjectMobiele.ViewModels
 	public class FotosKleutersPageViewModel : ViewModelBase
 	{
         public ICommand ImageKleuterClicked { get; private set; }
+        LoadAllData dataConnection;
         private IPageDialogService dialogService;
-        public FotosKleutersPageViewModel(INavigationService navigationService, IPageDialogService dialogService) : base(navigationService)
+        public FotosKleutersPageViewModel(INavigationService navigationService, IPageDialogService dialogService, LoadAllData dataConnection) : base(navigationService)
         {
+            this.dataConnection = dataConnection;
             ImageKleuterClicked = new DelegateCommand(ExecuteTakePhotoCommand);
             this.dialogService = dialogService;
-            Kleuters = new ObservableCollection<Kleuter>();
-            Kleuters.Add(k);
+            //Kleuters = new ObservableCollection<Kleuter>();
         }
 
         private IList<Kleuter> kleuters;
@@ -33,17 +35,16 @@ namespace TestProjectMobiele.ViewModels
             set { SetProperty(ref kleuters, value); }
         }
 
-       
-        Kleuter k = new Kleuter
+        public async override void OnNavigatedTo(NavigationParameters parameters)
         {
-            KleuterID = 0,
-            VoorNaam = "Daan",
-            Naam = "Vandebosch",
-            SchoolID = 2,
-            FotoPad = "FotoString",
-            GezinsID = 4,
-            KlasID = 4
-        };
+            Kleuters = await dataConnection.LoadKleuters();
+            string voornaam = "";
+            foreach(Kleuter k in Kleuters)
+            {
+                voornaam += k.VoorNaam;
+            }
+            await dialogService.DisplayAlertAsync("Alle Kleuters", voornaam, "OK");
+        }
         
 
         private ImageSource source;
