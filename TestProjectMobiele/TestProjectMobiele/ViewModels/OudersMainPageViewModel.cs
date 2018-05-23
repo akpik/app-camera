@@ -88,7 +88,7 @@ namespace TestProjectMobiele.ViewModels
                 Source = downloadUrl;
                 await dialogService.DisplayAlertAsync("File Saved", "File successfully saved.", "OK");
             }
-            catch (Exception ex)
+            catch
             {
                 await dialogService.DisplayAlertAsync("Exception was thrown", "Error while uploading to online storage.\n Do you have internet connection?", "OK");
             }
