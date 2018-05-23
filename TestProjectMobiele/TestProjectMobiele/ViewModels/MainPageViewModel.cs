@@ -20,6 +20,7 @@ namespace TestProjectMobiele.ViewModels
         private LoadAllData dataConnection;
         public ICommand ImageHomeClicked { get; private set; }
         public ICommand ImageSchoolClicked { get; private set; }
+
         public MainPageViewModel(INavigationService navigationService, LoadAllData dataConnection) 
             : base (navigationService)
         {
@@ -39,20 +40,14 @@ namespace TestProjectMobiele.ViewModels
             PreFab preFab = new PreFab();
             foreach(Kleuter k in preFab.ReturnKleuters())
             {
-                dataConnection.SaveItemAsync(k);
+                test(k);
             }
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
         }
        
-        private async Task<int> test(Task<List<Kleuter>> k)
+        private async void test(Kleuter k)
         {
-            List<Kleuter> kleu = await k;
-            foreach (Kleuter kl in kleu)
-            {
-                string x = kl.Naam;
-            }
-            return 0;
+            await dataConnection.SaveItemAsync(k);
         }
-
     }
 }
