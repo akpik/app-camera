@@ -42,7 +42,7 @@ namespace TestProjectMobiele.ViewModels
                 SchoolID = 2,
                 FotoPad = "FotoString",
                 GezinsID = 4,
-                KlasID = 4
+                KlasID = 6
             };
             dataConnection.SaveItemAsync(k);
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
