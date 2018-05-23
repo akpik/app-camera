@@ -41,8 +41,8 @@ namespace TestProjectMobiele.ViewModels
             {
                 dataConnection.SaveItemAsync(k);
             }
-
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
+            test(kl);
         }
        
         private async Task<int> test(Task<List<Kleuter>> k)
