@@ -6,6 +6,7 @@ using Prism.Navigation;
 using Prism.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
@@ -21,10 +22,18 @@ namespace TestProjectMobiele.ViewModels
         {
             ImageKleuterClicked = new DelegateCommand(ExecuteTakePhotoCommand);
             this.dialogService = dialogService;
+            Kleuters = new ObservableCollection<Kleuter>();
             Kleuters.Add(k);
         }
 
-        private List<Kleuter> Kleuters = new List<Kleuter>();
+        private IList<Kleuter> kleuters;
+        public IList<Kleuter>  Kleuters
+        {
+            get { return kleuters; }
+            set { SetProperty(ref kleuters, value); }
+        }
+
+       
         Kleuter k = new Kleuter
         {
             KleuterID = 0,
