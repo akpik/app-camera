@@ -10,6 +10,8 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using TestProjectMobiele;
 using System.Threading.Tasks;
+using System.IO;
+using Firebase.Storage;
 
 namespace TestProjectMobiele.ViewModels
 {
@@ -47,6 +49,7 @@ namespace TestProjectMobiele.ViewModels
             dataConnection.SaveItemAsync(k);
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
         }
+       
         private async Task<int> test(Task<List<Kleuter>> k)
         {
             List<Kleuter> kleu = await k;

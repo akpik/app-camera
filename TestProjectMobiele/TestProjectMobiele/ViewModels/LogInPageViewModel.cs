@@ -14,18 +14,24 @@ namespace TestProjectMobiele.ViewModels
         public string TekstVak { get; set; }
         public LogInPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            LoginKnopGedrukt = new DelegateCommand(() =>
+            try
             {
-                
-                if (TekstVak.ToUpper() == "OUDER")
+                LoginKnopGedrukt = new DelegateCommand(() =>
                 {
-                    NavigationService.NavigateAsync("OudersMainPage");
-                }
-                else if (TekstVak.ToUpper() == "LERAAR")
-                {
-                    NavigationService.NavigateAsync("FotosKleutersPage");
-                }
-            });
+                    if (TekstVak.ToUpper() == "OUDER")
+                    {
+                        NavigationService.NavigateAsync("OudersMainPage");
+                    }
+                    else if (TekstVak.ToUpper() == "LERAAR")
+                    {
+                        NavigationService.NavigateAsync("FotosKleutersPage");
+                    }
+                });
+            }
+            catch
+            {
+
+            }
         }
         //test andreytfytfvsdvds
     }
