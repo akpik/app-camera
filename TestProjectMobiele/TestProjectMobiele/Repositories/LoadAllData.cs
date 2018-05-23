@@ -36,8 +36,7 @@ namespace TestProjectMobiele
 
         public async Task<List<Kleuter>> LoadKleuters()
         {
-            List<Kleuter> kl = await dbContext.tblkleuter.ToListAsync();
-            return kl;
+            return = await dbContext.tblkleuter.ToListAsync();
         }
 
         public async Task<List<Leerkracht>> LoadLeerkrachten()

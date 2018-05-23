@@ -24,7 +24,7 @@ namespace TestProjectMobiele
             {
                 KleuterID = 1,
                 VoorNaam = "Daan",
-                Naam = "Vandebosch",
+                Naam = "Akpinar",
                 SchoolID = 1,
                 FotoPad = "FotoString",
                 GezinsID = 1,
@@ -35,7 +35,7 @@ namespace TestProjectMobiele
             {
                 KleuterID = 2,
                 VoorNaam = "Daan",
-                Naam = "Vandebosch",
+                Naam = "Nlsdg",
                 SchoolID = 2,
                 FotoPad = "FotoString",
                 GezinsID = 2,
