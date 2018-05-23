@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TestProjectMobiele.Views.OudersMainPage"
+             BackgroundColor="SteelBlue"
+             Title="Hoofdpagina ouder">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Orientation="Horizontal">
+        <Image Margin="50">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+            Command="{Binding ImageChildClicked}"/>
+            </Image.GestureRecognizers>
+
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource" WinPhone="Images/ChildWhite.scale-100.png" iOS="ic_child_care_white_48pt.png" Android="ic_child_care_white_48dp.png" />
+            </Image.Source>
+        </Image>
+
+        <Image Margin="50">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+            Command="{Binding ImageCameraClicked}"/>
+            </Image.GestureRecognizers>
+
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource" WinPhone="Images/PhotoCamera.png" iOS="ic_photo_camera_white_48pt.png" Android="ic_photo_camera_white_48dp.png" />
+            </Image.Source>
+        </Image>
+
+    </StackLayout>
+
+</ContentPage>

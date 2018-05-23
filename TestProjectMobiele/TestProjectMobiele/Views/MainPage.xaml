@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestProjectMobiele.Views.MainPage"
+             Title="{Binding Title}"
+             BackgroundColor="SteelBlue">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Orientation="Horizontal">
+        <Image Margin="50">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+            Command="{Binding ImageSchoolClicked}"/>
+            </Image.GestureRecognizers>
+
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource" WinPhone="Images/SchoolWhite.png" iOS="ic_school_white_48pt.png" Android="ic_school_white_48dp.png" />
+            </Image.Source>
+        </Image>
+
+        <Image Margin="50">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+            Command="{Binding ImageHomeClicked}"/>
+            </Image.GestureRecognizers>
+
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource" WinPhone="Images/HomeWhite.png" iOS="ic_home_white_48pt.png" Android="ic_home_white_48dp.png" />
+            </Image.Source>
+        </Image>
+    </StackLayout>
+    
+
+</ContentPage>

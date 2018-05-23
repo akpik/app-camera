@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TestProjectMobiele.Views.FotosKleutersPage"
+             BackgroundColor="SteelBlue"
+             Title="Leerlingen">
+
+    <!--<StackLayout Orientation="Vertical" Margin="20" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" BackgroundColor="LightGray" Margin="5">
+                <Image WidthRequest="100" HeightRequest="100" Margin="5">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource" WinPhone="Images/PersonBlack.png" iOS="ic_person_48pt.png" Android="ic_person_black_48dp.png" />
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding ImageKleuterClicked}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Kleuter A" FontSize="Medium" TextColor="SteelBlue" Margin="5"/>
+            </StackLayout>
+            
+            
+        </StackLayout>
+        
+    </StackLayout>-->
+    <ListView ItemsSource="{Binding Kleuters}" Margin="20" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal">
+                        <Label Text="{Binding VoorNaam}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                        <Label Text="{Binding Naam}" VerticalTextAlignment="Center" HorizontalOptions="Center" />
+                        <!--<Image IsVisible="{Binding Done}" HorizontalOptions="End">
+                            <Image.Source>
+                                <OnPlatform x:TypeArguments="ImageSource" iOS="ic_done.png" Android="ic_done_black_24dp.png" />
+                            </Image.Source>
+                        </Image>-->
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
