@@ -12,7 +12,7 @@ namespace TestProjectMobiele
             Kleuter k = new Kleuter
             {
                 KleuterID = 0,
-                VoorNaam = "Daan",
+                VoorNaam = "Kaan",
                 Naam = "Vandebosch",
                 SchoolID = 0,
                 FotoPad = "FotoString",

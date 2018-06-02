@@ -39,6 +39,7 @@ namespace TestProjectMobiele
             containerRegistry.RegisterForNavigation<TimelinePage>();
         
             containerRegistry.Register<IDataConnection, DataConnection>();
+            containerRegistry.RegisterForNavigation<FotosHoekenPage>();
         }
     }
 }
