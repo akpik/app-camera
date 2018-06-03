@@ -12,7 +12,7 @@ namespace TestProjectMobiele
             Kleuter k = new Kleuter
             {
                 KleuterID = 0,
-                VoorNaam = "Daan",
+                VoorNaam = "Naam1",
                 Naam = "Vandebosch",
                 SchoolID = 0,
                 FotoPad = "FotoString",
@@ -23,7 +23,7 @@ namespace TestProjectMobiele
             k = new Kleuter
             {
                 KleuterID = 1,
-                VoorNaam = "Daan",
+                VoorNaam = "Naam2",
                 Naam = "Akpinar",
                 SchoolID = 1,
                 FotoPad = "FotoString",
@@ -34,7 +34,7 @@ namespace TestProjectMobiele
             k = new Kleuter
             {
                 KleuterID = 2,
-                VoorNaam = "Daan",
+                VoorNaam = "Naam3",
                 Naam = "Nlsdg",
                 SchoolID = 2,
                 FotoPad = "FotoString",
