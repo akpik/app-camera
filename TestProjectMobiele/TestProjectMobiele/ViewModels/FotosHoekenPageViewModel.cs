@@ -23,10 +23,10 @@ namespace TestProjectMobiele.ViewModels
             get { return hoeken; }
             set { SetProperty(ref hoeken, value); }
         }
-        public async override void OnNavigatedTo(NavigationParameters parameters)
-        {
-            Hoeken = await dataConnection.LoadHoeken();
+        //public async override void OnNavigatedTo(NavigationParameters parameters)
+        //{
+        //    Hoeken = await dataConnection.LoadHoeken();
 
-        }
+        //}
     }
 }
