@@ -12,16 +12,16 @@ using TestProjectMobiele;
 using System.Threading.Tasks;
 using System.IO;
 using Firebase.Storage;
+using TestProjectMobiele.Contracts;
 
 namespace TestProjectMobiele.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        private LoadAllData dataConnection;
+        private ILoadAllData dataConnection;
         public ICommand ImageHomeClicked { get; private set; }
         public ICommand ImageSchoolClicked { get; private set; }
-
-        public MainPageViewModel(INavigationService navigationService, LoadAllData dataConnection) 
+        public MainPageViewModel(INavigationService navigationService, ILoadAllData dataConnection) 
             : base (navigationService)
         {
             Title = "Klas applicatie";
@@ -37,17 +37,42 @@ namespace TestProjectMobiele.ViewModels
                   NavigationService.NavigateAsync("FotosKleutersPage");
              });
 
-            PreFab preFab = new PreFab();
-            foreach(Kleuter k in preFab.ReturnKleuters())
+            try
             {
-                test(k);
+                Laad();
             }
-            Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
+            catch(Exception ex)
+            {
+               
+            }
+           
+
+            
+
+            //Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
+            //test(kl);
+        }
+
+        private async void Laad()
+        {
+            PreFab preFab = new PreFab();
+            List<Kleuter> test = preFab.ReturnKleuters();
+            int i;
+            foreach (Kleuter k in test)
+            {
+                i = await dataConnection.SaveItemAsync(k);
+            }
         }
        
-        private async void test(Kleuter k)
+        private async Task<int> test(Task<List<Kleuter>> k)
         {
-            await dataConnection.SaveItemAsync(k);
+            List<Kleuter> kleu = await k;
+            foreach (Kleuter kl in kleu)
+            {
+                string x = kl.Naam;
+            }
+            return 0;
         }
+
     }
 }
