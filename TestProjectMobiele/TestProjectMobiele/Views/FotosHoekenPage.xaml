@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="TestProjectMobiele.Views.TimelinePage"
+             x:Class="TestProjectMobiele.Views.FotosHoekenPage"
              BackgroundColor="SteelBlue"
-             Title="Tijdlijn">
-    <ListView ItemsSource="{Binding Fotos}" Margin="20" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+             Title="Speelhoeken">
+
+    <ListView ItemsSource="{Binding Hoeken}" Margin="20" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <StackLayout Margin="20,0,0,0" Orientation="Horizontal">
-                        <Label Text="{Binding Fotopaden}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                        <Label Text="{Binding Naam}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                         <!--<Image IsVisible="{Binding Done}" HorizontalOptions="End">
                             <Image.Source>
                                 <OnPlatform x:TypeArguments="ImageSource" iOS="ic_done.png" Android="ic_done_black_24dp.png" />
