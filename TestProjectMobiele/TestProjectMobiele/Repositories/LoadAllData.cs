@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using TestProjectMobiele.Contracts;
 
 namespace TestProjectMobiele
 {
-    public class LoadAllData
+    public class LoadAllData : ILoadAllData
     {
         private IDataConnection dbContext;
 

@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TestProjectMobiele.Contracts;
 using Xamarin.Forms;
 
 namespace TestProjectMobiele.ViewModels
@@ -18,9 +19,9 @@ namespace TestProjectMobiele.ViewModels
 	public class FotosKleutersPageViewModel : ViewModelBase
 	{
         public ICommand ImageKleuterClicked { get; private set; }
-        LoadAllData dataConnection;
+        ILoadAllData dataConnection;
         private IPageDialogService dialogService;
-        public FotosKleutersPageViewModel(INavigationService navigationService, IPageDialogService dialogService, LoadAllData dataConnection) : base(navigationService)
+        public FotosKleutersPageViewModel(INavigationService navigationService, IPageDialogService dialogService, ILoadAllData dataConnection) : base(navigationService)
         {
             this.dataConnection = dataConnection;
             ImageKleuterClicked = new DelegateCommand(ExecuteTakePhotoCommand);
@@ -37,6 +38,13 @@ namespace TestProjectMobiele.ViewModels
 
         public async override void OnNavigatedTo(NavigationParameters parameters)
         {
+            List<Kleuter> kl = await dataConnection.LoadKleuters();
+            string blup = "";
+            foreach (Kleuter k in kl)
+            {
+                 blup += k.VoorNaam;
+            }
+            await dialogService.DisplayAlertAsync("Alle Kleuters", blup, "OK");
             Kleuters = await dataConnection.LoadKleuters();
             string voornaam = "";
             foreach(Kleuter k in Kleuters)

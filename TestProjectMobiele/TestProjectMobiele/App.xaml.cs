@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using Prism.Unity;
 using TestProjectMobieles.Data;
 using TestProjectMobiele;
+using TestProjectMobiele.Contracts;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TestProjectMobiele
@@ -39,6 +40,9 @@ namespace TestProjectMobiele
             containerRegistry.RegisterForNavigation<TimelinePage>();
         
             containerRegistry.Register<IDataConnection, DataConnection>();
+            containerRegistry.Register<ILoadAllData, LoadAllData>();
+          
+            containerRegistry.RegisterForNavigation<FotosHoekenPage>();
         }
     }
 }
