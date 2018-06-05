@@ -42,14 +42,14 @@ namespace TestProjectMobiele.ViewModels
         //        }
         //    }
         //}
-        //public async override void OnNavigatedTo(NavigationParameters parameters)
-        //{
-        //    Hoeken = await dataConnection.LoadHoeken();
-        //    if (parameters.ContainsKey("kleuter"))
-        //    {
-        //        kleuter = (Kleuter)parameters["kleuter"];
-        //    }
+        public async override void OnNavigatedTo(NavigationParameters parameters)
+        {
+            Hoeken = await dataConnection.LoadHoeken();
+            if (parameters.ContainsKey("kleuter"))
+            {
+                kleuter = (Kleuter)parameters["kleuter"];
+            }
 
-        //}
+        }
     }
 }
