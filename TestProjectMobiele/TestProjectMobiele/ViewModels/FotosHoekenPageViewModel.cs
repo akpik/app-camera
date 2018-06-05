@@ -18,7 +18,6 @@ namespace TestProjectMobiele.ViewModels
         {
             this.dataConnection = dataConnection;
             this.dialogService = dialogService;
-            dialogService.DisplayAlertAsync("Alle Kleuters", kleuter.Naam, "OK");
         }
         private IList<Hoek> hoeken;
         public IList<Hoek> Hoeken
@@ -49,6 +48,7 @@ namespace TestProjectMobiele.ViewModels
             {
                 kleuter = (Kleuter)parameters["kleuter"];
             }
+            await dialogService.DisplayAlertAsync("Geselecteerde kleuter", kleuter.Naam +" " +kleuter.VoorNaam, "OK");
 
         }
     }
