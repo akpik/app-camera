@@ -7,6 +7,7 @@ using System.Text;
 
 namespace TestProjectMobiele
 {
+    //Gemaakt door Daan Vandebosch
     public class Foto
     {
         [Key]

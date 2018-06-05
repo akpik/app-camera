@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace TestProjectMobiele
 {
+    //Gemaakt door Daan Vandebosch
     public interface IDataConnection
     {
         DbSet<Foto> tblfoto { get; set; }

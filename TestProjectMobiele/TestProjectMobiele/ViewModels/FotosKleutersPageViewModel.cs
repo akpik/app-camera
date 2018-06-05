@@ -53,20 +53,7 @@ namespace TestProjectMobiele.ViewModels
 
         public async override void OnNavigatedTo(NavigationParameters parameters)
         {
-            //List<Kleuter> kl = await dataConnection.LoadKleuters();
-            //string blup = "";
-            //foreach (Kleuter k in kl)
-            //{
-            //     blup += k.VoorNaam;
-            //}
-            //await dialogService.DisplayAlertAsync("Alle Kleuters", blup, "OK");
             Kleuters = await dataConnection.LoadKleuters();
-            //string voornaam = "";
-            //foreach(Kleuter k in Kleuters)
-            //{
-            //    voornaam += k.VoorNaam;
-            //}
-            //await dialogService.DisplayAlertAsync("Alle Kleuters", voornaam, "OK");
         }
         
 

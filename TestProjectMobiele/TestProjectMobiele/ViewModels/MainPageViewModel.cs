@@ -40,6 +40,7 @@ namespace TestProjectMobiele.ViewModels
                   NavigationService.NavigateAsync("FotosKleutersPage");
              });
 
+            //Gemaakt door Daan Vandebosch
             try
             {
                 Prefab();           
@@ -77,14 +78,6 @@ namespace TestProjectMobiele.ViewModels
             //{
             //    int i = await dataConnection.SaveItemAsync(k);
             //}
-        }
-        private async void test(Task<List<Kleuter>> lijst)
-        {
-            List <Kleuter> kleuters = await lijst;
-            foreach(Kleuter k in kleuters)
-            {
-                string x = k.VoorNaam + " " + k.Naam;
-            }
         }
     }
 }

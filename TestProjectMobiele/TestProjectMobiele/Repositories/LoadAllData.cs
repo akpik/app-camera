@@ -6,6 +6,7 @@ using TestProjectMobiele.Contracts;
 
 namespace TestProjectMobiele
 {
+    //Gemaakt door Daan Vandebosch
     public class LoadAllData : ILoadAllData
     {
         private IDataConnection dbContext;

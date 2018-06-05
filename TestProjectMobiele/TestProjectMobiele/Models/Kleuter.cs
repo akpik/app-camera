@@ -8,6 +8,7 @@ namespace TestProjectMobiele
 {
     public class Kleuter
     {
+        //Gemaakt door Daan Vandebosch
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KleuterID { get; set; }

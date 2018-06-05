@@ -8,6 +8,7 @@ namespace TestProjectMobiele
 {
     public class Gezin
     {
+        //Gemaakt door Daan Vandebosch
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int GezinsID { get; set; }

@@ -7,6 +7,7 @@ namespace TestProjectMobiele.Contracts
 {
     public interface ILoadAllData
     {
+        //Gemaakt door Daan Vandebosch
         Task<List<Foto>> LoadFotos();
         Task<List<Gezin>> LoadGezinnen();
         Task<List<Hoek>> LoadHoeken();

@@ -72,17 +72,15 @@ namespace TestProjectMobiele.ViewModels
             //Firebase
             try
             {
+                //Gemaakt door Daan Vandebosch
                 string ApiKey = "AIzaSyD41S0qRV0dw0c7aoqKGjsnw8m6hSdR8QI";
                 string Bucket = "mobileapps-11044.appspot.com";
                 string AuthEmail = "test@test.be";
                 string AuthPassword = "test123";
 
-                // of course you can login using other method, not just email+password
                 var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
                 var a = await auth.SignInWithEmailAndPasswordAsync(AuthEmail, AuthPassword);
 
-                //Firebase Upload
-                // Constructr FirebaseStorage, path to where you want to upload the file and Put it there
                 var task = new FirebaseStorage(
                     Bucket,
                     new FirebaseStorageOptions

@@ -8,6 +8,7 @@ namespace TestProjectMobiele
 {
     public class Leerkracht
     {
+        //Gemaakt door Daan Vandebosch
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string LeerkrachtCode { get; set; }
