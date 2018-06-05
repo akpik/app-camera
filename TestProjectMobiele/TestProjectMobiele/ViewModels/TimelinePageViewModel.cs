@@ -48,14 +48,16 @@ namespace TestProjectMobiele.ViewModels
                 }
             }
             string fotop = "";
+            List<Foto> fotolijst = new List<Foto>();
             foreach (Foto f in await dataConnection.LoadFotos())
             {
                 if (f.KleuterID == kleuter.KleuterID)
                 {
-                    Fotopaden.Add(f.FotoPad);
+                    fotolijst.Add(f);
                     fotop += f.FotoPad;
                 }
             }
+            Fotos = fotolijst;
             await dialogService.DisplayAlertAsync("Alle Fotopaden van dit gezin", fotop, "OK");
 
         }
