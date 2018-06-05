@@ -22,58 +22,58 @@ namespace TestProjectMobiele.Data
             //Kleuters
             Kleuter k = new Kleuter
             {
-                KleuterID = 50,
+                KleuterID = 5000,
                 VoorNaam = "Naam1",
                 Naam = "Vandebosch",
                 SchoolID = 0,
                 FotoPad = "FotoString",
-                GezinsID = 50,
-                KlasID = 50
+                GezinsID = 5000,
+                KlasID = 5000
             };
             await dataConnection.SaveKleuterAsync(k);
 
             Kleuter k2 = new Kleuter
             {
-                KleuterID = 51,
+                KleuterID = 5001,
                 VoorNaam = "Naam3",
                 Naam = "Nlsdg",
                 SchoolID = 2,
                 FotoPad = "FotoString",
-                GezinsID = 51,
-                KlasID = 50
+                GezinsID = 5001,
+                KlasID = 5000
             };
             await dataConnection.SaveKleuterAsync(k2);
 
             Kleuter k3 = new Kleuter
             {
-                KleuterID = 52,
+                KleuterID = 5002,
                 VoorNaam = "Naam2",
                 Naam = "Akpinar",
                 SchoolID = 1,
                 FotoPad = "FotoString",
-                GezinsID = 52,
-                KlasID = 50
+                GezinsID = 5002,
+                KlasID = 5000
             };
             await dataConnection.SaveKleuterAsync(k3);
 
             //Gezinnen
             Gezin g1 = new Gezin
             {
-                GezinsID = 50,
+                GezinsID = 5000,
                 GezinsCode = "DAAN",
             };
             await dataConnection.SaveGezinAsync(g1);
 
             Gezin g2 = new Gezin
             {
-                GezinsID = 51,
+                GezinsID = 5001,
                 GezinsCode = "KAAN",
             };
             await dataConnection.SaveGezinAsync(g2);
 
             Gezin g3 = new Gezin
             {
-                GezinsID = 52,
+                GezinsID = 5002,
                 GezinsCode = "OUDER",
             };
             await dataConnection.SaveGezinAsync(g3);
@@ -81,21 +81,21 @@ namespace TestProjectMobiele.Data
             //Hoeken
             Hoek h1 = new Hoek
             {
-                HoekID = 50,
+                HoekID = 5000,
                 Naam = "Kaan kelder",
                 FotoPad = "KaanKelder",
                 SchoolID = 0,
-                KlasID = 50,
+                KlasID = 5000,
             };
             await dataConnection.SaveHoekAsync(h1);
 
             Hoek h2 = new Hoek
             {
-                HoekID = 51,
+                HoekID = 5001,
                 Naam = "Kaan zolder",
                 FotoPad = "KaanZolder",
                 SchoolID = 0,
-                KlasID = 50,
+                KlasID = 5000,
             };
             await dataConnection.SaveHoekAsync(h2);
         }
