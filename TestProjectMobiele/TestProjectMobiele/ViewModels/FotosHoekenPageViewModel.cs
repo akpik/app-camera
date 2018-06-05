@@ -11,6 +11,7 @@ namespace TestProjectMobiele.ViewModels
 	public class FotosHoekenPageViewModel : ViewModelBase
 	{
         LoadAllData dataConnection;
+        Kleuter kleuter;
         IPageDialogService dialogService;
         public FotosHoekenPageViewModel(INavigationService navigationService, IPageDialogService dialogService, LoadAllData dataConnection) : base(navigationService)
         {
@@ -26,7 +27,12 @@ namespace TestProjectMobiele.ViewModels
         //public async override void OnNavigatedTo(NavigationParameters parameters)
         //{
         //    Hoeken = await dataConnection.LoadHoeken();
+            //if (parameters.ContainsKey("kleuter"))
+            //    {
+            //        kleuter = (Kleuter) parameters["kleuter"];
+            //Name = kleuter.Name;
+            //    }
 
-        //}
-    }
+    //}
+}
 }
