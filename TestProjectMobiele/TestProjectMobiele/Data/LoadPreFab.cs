@@ -22,6 +22,7 @@ namespace TestProjectMobiele.Data
             //Kleuters
             Kleuter k = new Kleuter
             {
+                KleuterID = 0,
                 VoorNaam = "Naam1",
                 Naam = "Vandebosch",
                 SchoolID = 0,
@@ -33,6 +34,7 @@ namespace TestProjectMobiele.Data
 
             Kleuter k2 = new Kleuter
             {
+                KleuterID = 1,
                 VoorNaam = "Naam3",
                 Naam = "Nlsdg",
                 SchoolID = 2,
@@ -44,6 +46,7 @@ namespace TestProjectMobiele.Data
 
             Kleuter k3 = new Kleuter
             {
+                KleuterID = 2,
                 VoorNaam = "Naam2",
                 Naam = "Akpinar",
                 SchoolID = 1,
@@ -56,25 +59,32 @@ namespace TestProjectMobiele.Data
             //Gezinnen
             Gezin g1 = new Gezin
             {
-                GezinsCode = "KAAN",
+                GezinsID = 0,
+                GezinsCode = "kaangay",
+                Email = "gay@ucll.be",
             };
             await dataConnection.SaveGezinAsync(g1);
 
             Gezin g2 = new Gezin
             {
-                GezinsCode = "DAAN",
+                GezinsID = 1,
+                GezinsCode = "kaangay2",
+                Email = "gay2@ucll.be",
             };
             await dataConnection.SaveGezinAsync(g2);
 
             Gezin g3 = new Gezin
             {
-                GezinsCode = "OUDER",
+                GezinsID = 2,
+                GezinsCode = "kaangay3",
+                Email = "gay3@ucll.be",
             };
             await dataConnection.SaveGezinAsync(g3);
 
             //Hoeken
             Hoek h1 = new Hoek
             {
+                HoekID = 0,
                 Naam = "Kaan kelder",
                 FotoPad = "KaanKelder",
                 SchoolID = 0,
@@ -84,6 +94,7 @@ namespace TestProjectMobiele.Data
 
             Hoek h2 = new Hoek
             {
+                HoekID = 1,
                 Naam = "Kaan zolder",
                 FotoPad = "KaanZolder",
                 SchoolID = 0,
