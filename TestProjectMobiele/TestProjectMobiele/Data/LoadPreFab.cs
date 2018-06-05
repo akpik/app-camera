@@ -60,24 +60,21 @@ namespace TestProjectMobiele.Data
             Gezin g1 = new Gezin
             {
                 GezinsID = 0,
-                GezinsCode = "kaangay",
-                Email = "gay@ucll.be",
+                GezinsCode = "DAAN",
             };
             await dataConnection.SaveGezinAsync(g1);
 
             Gezin g2 = new Gezin
             {
                 GezinsID = 1,
-                GezinsCode = "kaangay2",
-                Email = "gay2@ucll.be",
+                GezinsCode = "KAAN",
             };
             await dataConnection.SaveGezinAsync(g2);
 
             Gezin g3 = new Gezin
             {
                 GezinsID = 2,
-                GezinsCode = "kaangay3",
-                Email = "gay3@ucll.be",
+                GezinsCode = "OUDER",
             };
             await dataConnection.SaveGezinAsync(g3);
 
