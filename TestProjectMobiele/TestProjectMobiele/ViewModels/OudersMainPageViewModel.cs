@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+
 namespace TestProjectMobiele.ViewModels
 {
 	public class OudersMainPageViewModel : ViewModelBase
@@ -53,12 +54,14 @@ namespace TestProjectMobiele.ViewModels
 
             if (file == null)
                 return;
+            
+            //Firebase
             try
             {
                 string ApiKey = "AIzaSyD41S0qRV0dw0c7aoqKGjsnw8m6hSdR8QI";
                 string Bucket = "mobileapps-11044.appspot.com";
-                string AuthEmail = "test@test.be";
-                string AuthPassword = "test123";
+                string AuthEmail = "apps@mobiel.com";
+                string AuthPassword = "apps2018";
 
                 // of course you can login using other method, not just email+password
                 var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
@@ -72,13 +75,13 @@ namespace TestProjectMobiele.ViewModels
                     {
                         AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),
                     })
-                    .Child("Kleuters")
-                    .Child("KleuterID1")
+                    .Child("data")
+                    .Child("random")
                     .Child("file.png")
                     .PutAsync(file.GetStream());
 
                 // Track progress of the upload
-                task.Progress.ProgressChanged += (s, e) => Console.WriteLine($"Progress: {e.Percentage} %");
+                //task.Progress.ProgressChanged += (s, e) => Console.WriteLine($"Progress: {e.Percentage} %");
 
                 // await the task to wait until upload completes and get the download url
                 var downloadUrl = await task;
@@ -86,11 +89,10 @@ namespace TestProjectMobiele.ViewModels
 
                 //Firebase download
                 Source = downloadUrl;
-                await dialogService.DisplayAlertAsync("File Saved", "File successfully saved.", "OK");
             }
-            catch
+            catch (Exception ex)
             {
-                await dialogService.DisplayAlertAsync("Exception was thrown", "Error while uploading to online storage.\n Do you have internet connection?", "OK");
+                await dialogService.DisplayAlertAsync("Exception was thrown", ex.Message, "OK");
             }
 
             Source = ImageSource.FromStream(() =>
