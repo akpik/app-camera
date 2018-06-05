@@ -92,7 +92,8 @@ namespace TestProjectMobiele.ViewModels
                         AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),
                     })
                     .Child("UCLL")
-                    .Child("ICT)")
+                    .Child("ICT")
+                    .Child(kleuter.Naam + kleuter.KleuterID)
                     .Child((id + 1).ToString())
                     .PutAsync(file.GetStream());
 
