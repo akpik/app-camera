@@ -15,6 +15,8 @@ namespace TestProjectMobiele.Contracts
         Task<List<Leerkracht>> LoadLeerkrachten();
         Task<List<School>> LoadScholen();
 
-        Task<int> SaveItemAsync(Kleuter item);
+        Task<int> SaveKleuterAsync(Kleuter item);
+        Task<int> SaveGezinAsync(Gezin item);
+        Task<int> SaveHoekAsync(Hoek item);
     }
 }

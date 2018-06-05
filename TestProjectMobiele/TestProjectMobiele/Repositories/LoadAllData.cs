@@ -50,9 +50,23 @@ namespace TestProjectMobiele
             return await dbContext.tblschool.ToListAsync();
         }
 
-        public async Task<int> SaveItemAsync(Kleuter item)
+        public async Task<int> SaveKleuterAsync(Kleuter item)
         {
             await dbContext.tblkleuter.AddAsync(item);
+
+            return await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<int> SaveGezinAsync(Gezin item)
+        {
+            await dbContext.tblgezin.AddAsync(item);
+
+            return await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<int> SaveHoekAsync(Hoek item)
+        {
+            await dbContext.tblhoek.AddAsync(item);
 
             return await dbContext.SaveChangesAsync();
         }

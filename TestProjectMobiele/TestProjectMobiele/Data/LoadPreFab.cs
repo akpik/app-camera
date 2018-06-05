@@ -14,14 +14,13 @@ namespace TestProjectMobiele.Data
         public LoadPreFab(ILoadAllData dataConnection)
         {
             this.dataConnection = dataConnection;
-            GetKleuters();
         }
 
         public async void SaveKleuters()
         {
+            //Kleuters
             Kleuter k = new Kleuter
             {
-                KleuterID = 4432,
                 VoorNaam = "Naam1",
                 Naam = "Vandebosch",
                 SchoolID = 0,
@@ -29,10 +28,10 @@ namespace TestProjectMobiele.Data
                 GezinsID = 0,
                 KlasID = 0
             };
-            await dataConnection.SaveItemAsync(k);
+            await dataConnection.SaveKleuterAsync(k);
+
             Kleuter k2 = new Kleuter
             {
-                KleuterID = 59,
                 VoorNaam = "Naam3",
                 Naam = "Nlsdg",
                 SchoolID = 2,
@@ -40,10 +39,10 @@ namespace TestProjectMobiele.Data
                 GezinsID = 2,
                 KlasID = 0
             };
-            await dataConnection.SaveItemAsync(k2);
+            await dataConnection.SaveKleuterAsync(k2);
+
             Kleuter k3 = new Kleuter
             {
-                KleuterID = 37,
                 VoorNaam = "Naam2",
                 Naam = "Akpinar",
                 SchoolID = 1,
@@ -51,44 +50,48 @@ namespace TestProjectMobiele.Data
                 GezinsID = 1,
                 KlasID = 0
             };
-            await dataConnection.SaveItemAsync(k3);
-        }
+            await dataConnection.SaveKleuterAsync(k3);
 
-        private void GetKleuters()
-        {
-            Kleuter k = new Kleuter
+            //Gezinnen
+            Gezin g1 = new Gezin
             {
-                KleuterID = 0,
-                VoorNaam = "Naam1",
-                Naam = "Vandebosch",
+                GezinsCode = "kaangay",
+                Email = "gay@ucll.be",
+            };
+            await dataConnection.SaveGezinAsync(g1);
+
+            Gezin g2 = new Gezin
+            {
+                GezinsCode = "kaangay2",
+                Email = "gay2@ucll.be",
+            };
+            await dataConnection.SaveGezinAsync(g2);
+
+            Gezin g3 = new Gezin
+            {
+                GezinsCode = "kaangay3",
+                Email = "gay3@ucll.be",
+            };
+            await dataConnection.SaveGezinAsync(g3);
+
+            //Hoeken
+            Hoek h1 = new Hoek
+            {
+                Naam = "Kaan kelder",
+                FotoPad = "KaanKelder",
                 SchoolID = 0,
-                FotoPad = "FotoString",
-                GezinsID = 0,
-                KlasID = 0
+                KlasID = 0,
             };
-            kleuters.Add(k);
-            k = new Kleuter
+            await dataConnection.SaveHoekAsync(h1);
+
+            Hoek h2 = new Hoek
             {
-                KleuterID = 1,
-                VoorNaam = "Naam2",
-                Naam = "Akpinar",
-                SchoolID = 1,
-                FotoPad = "FotoString",
-                GezinsID = 1,
-                KlasID = 0
+                Naam = "Kaan zolder",
+                FotoPad = "KaanZolder",
+                SchoolID = 0,
+                KlasID = 0,
             };
-            kleuters.Add(k);
-            k = new Kleuter
-            {
-                KleuterID = 2,
-                VoorNaam = "Naam3",
-                Naam = "Nlsdg",
-                SchoolID = 2,
-                FotoPad = "FotoString",
-                GezinsID = 2,
-                KlasID = 0
-            };
-            kleuters.Add(k);
+            await dataConnection.SaveHoekAsync(h2);
         }
     }
 }
