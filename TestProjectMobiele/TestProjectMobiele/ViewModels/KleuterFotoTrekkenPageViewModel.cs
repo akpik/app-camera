@@ -53,8 +53,6 @@ namespace TestProjectMobiele.ViewModels
             if (file == null)
                 return;
 
-            await dialogService.DisplayAlertAsync("File Location", file.Path, "OK");
-
             Source = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
@@ -102,11 +100,15 @@ namespace TestProjectMobiele.ViewModels
 
                 // await the task to wait until upload completes and get the download url
                 var downloadUrl = await task;
-                await dialogService.DisplayAlertAsync("Download Url", downloadUrl, "OK");
+                await dialogService.DisplayAlertAsync("Download Url", "Picture Uploaded", "OK");
 
                 //Firebase download
                 Source = downloadUrl;
 
+                while(downloadUrl == null || downloadUrl == "")
+                {
+
+                }
                 //Database storage
                 Foto f = new Foto
                 {

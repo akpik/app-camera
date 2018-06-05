@@ -13,6 +13,8 @@ namespace TestProjectMobiele
         public string LeerkrachtCode { get; set; }
         public string Voornaam { get; set; }
         public string Achternaam { get; set; }
+
+        //Relations
         public int SchoolID { get; set; }
         public int KlasID { get; set; }
     }

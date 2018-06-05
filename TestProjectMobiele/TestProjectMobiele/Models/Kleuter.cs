@@ -13,9 +13,11 @@ namespace TestProjectMobiele
         public int KleuterID { get; set; }
         public string VoorNaam { get; set; }
         public string Naam { get; set; }
-        public int SchoolID { get; set; }
         public string FotoPad { get; set; }
+
+        //Relations
         public int GezinsID { get; set; }
         public int KlasID { get; set; }
+        public int SchoolID { get; set; }
     }
 }

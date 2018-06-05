@@ -12,10 +12,11 @@ namespace TestProjectMobiele
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FotoID { get; set; }
-        public int KleuterID { get; set; }
         public string FotoPad { get; set; }
         public string Datum { get; set; }
+
+        //Relations
+        public int KleuterID { get; set; }
         public int HoekID { get; set; }
-        public string VriendenID { get; set; }
     }
 }
