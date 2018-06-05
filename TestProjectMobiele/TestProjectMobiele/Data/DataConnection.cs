@@ -20,13 +20,6 @@ namespace TestProjectMobieles.Data
         {
             string databasePath = fileHelper.GetLocalFilePath("TodoSQLite4890521.db3");
             connectionString = string.Format("Filename={0}", databasePath);
-            string test = Database.GetDbConnection().cl;
-
-
-            if (Database.EnsureCreated())
-            {
-                Database.EnsureDeleted();
-            }
 
             Database.EnsureCreated();
         }
@@ -45,6 +38,10 @@ namespace TestProjectMobieles.Data
                 string x = ex.Message;
             }
             
+        }
+        public void DeleteDatabase()
+        {
+            Database.EnsureDeleted();
         }
     }
 }
