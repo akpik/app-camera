@@ -12,6 +12,5 @@ namespace TestProjectMobiele
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int GezinsID { get; set; }
         public string GezinsCode { get; set; }
-        public string Email { get; set; }
     }
 }

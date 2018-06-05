@@ -21,14 +21,23 @@ namespace TestProjectMobiele.ViewModels
         public ICommand ImageChildClicked { get; private set; }
         public ICommand ImageCameraClicked { get; private set; }
         private IPageDialogService dialogService;
+        Gezin gezin;
         public OudersMainPageViewModel(INavigationService navigationService, IPageDialogService dialogService)
             : base(navigationService)
         {
-            ImageChildClicked = new DelegateCommand(() => NavigationService.NavigateAsync("TimelinePage"));
+            ImageChildClicked = new DelegateCommand(GoToTimeline);
             ImageCameraClicked = new DelegateCommand(ExecuteTakePhotoCommand);
             this.dialogService = dialogService;
 
         }
+
+        private void GoToTimeline()
+        {
+            var p = new NavigationParameters();
+            p.Add("gezin", gezin);
+            NavigationService.NavigateAsync("TimelinePage", p);
+        }
+
         private ImageSource source;
         public ImageSource Source
         {
@@ -100,6 +109,13 @@ namespace TestProjectMobiele.ViewModels
                 var stream = file.GetStream();
                 return stream;
             });
+        }
+        public override void OnNavigatedTo(NavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("gezin"))
+            {
+                gezin = (Gezin)parameters["gezin"];
+            }
         }
     }
 }
