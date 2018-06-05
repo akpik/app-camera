@@ -68,7 +68,7 @@ namespace TestProjectMobiele.ViewModels
             {
                 hoek = (Hoek)parameters["hoek"];
             }
-            await dialogService.DisplayAlertAsync("Geselecteerde kleuter", kleuter.Naam + " " + kleuter.VoorNaam +" Hoek", "OK");
+            await dialogService.DisplayAlertAsync("Geselecteerde kleuter", kleuter.Naam + " " + kleuter.VoorNaam + " " + hoek.Naam, "OK");
 
         }
     }
