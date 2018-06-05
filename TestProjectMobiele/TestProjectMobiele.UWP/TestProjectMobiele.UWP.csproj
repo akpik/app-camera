@@ -129,6 +129,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net">
+      <Version>3.0.7</Version>
+    </PackageReference>
+    <PackageReference Include="FirebaseStorage.net">
+      <Version>1.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
       <Version>2.0.3</Version>
     </PackageReference>

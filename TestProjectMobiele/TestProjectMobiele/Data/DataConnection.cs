@@ -18,8 +18,10 @@ namespace TestProjectMobieles.Data
 
         public DataConnection(IFileHelper fileHelper)
         {
-            string databasePath = fileHelper.GetLocalFilePath("TodoSQLite3.db3");
+            string databasePath = fileHelper.GetLocalFilePath("TodoSQLite4890521.db3");
             connectionString = string.Format("Filename={0}", databasePath);
+
+            //Database.EnsureDeleted();
 
             Database.EnsureCreated();
         }

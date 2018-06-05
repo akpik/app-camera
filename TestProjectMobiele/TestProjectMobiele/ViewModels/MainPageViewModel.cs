@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.IO;
 using Firebase.Storage;
 using TestProjectMobiele.Contracts;
+using Prism.Events;
+using TestProjectMobiele.Events;
+using TestProjectMobiele.Data;
 
 namespace TestProjectMobiele.ViewModels
 {
@@ -21,7 +24,8 @@ namespace TestProjectMobiele.ViewModels
         private ILoadAllData dataConnection;
         public ICommand ImageHomeClicked { get; private set; }
         public ICommand ImageSchoolClicked { get; private set; }
-        public MainPageViewModel(INavigationService navigationService, ILoadAllData dataConnection) 
+
+        public MainPageViewModel(INavigationService navigationService, IEventAggregator ea, ILoadAllData dataConnection) 
             : base (navigationService)
         {
             Title = "Klas applicatie";
@@ -39,34 +43,49 @@ namespace TestProjectMobiele.ViewModels
 
             try
             {
-                Laad();
+                Prefab();           
             }
             catch(Exception ex)
             {
-               
+                string x = ex.Message;
             }
-           
 
-            
 
-            //Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
-            //test(kl);
-        }
 
-        private async void Laad()
-        {
-            PreFab preFab = new PreFab();
-            List<Kleuter> test = preFab.ReturnKleuters();
-            int i;
-            foreach (Kleuter k in test)
-            {
-                i = await dataConnection.SaveItemAsync(k);
-            }
+            Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
+            test(kl);
         }
        
-        private async void test(Kleuter k)
+        private async void Prefab()
         {
-            await dataConnection.SaveItemAsync(k);
+            LoadPreFab preFab = new LoadPreFab(dataConnection);
+            preFab.SaveKleuters();
+            
+            //Kleuter k1 = new Kleuter
+            //{
+            //    Naam = "Daan123",
+            //    VoorNaam = "Vancebosch",
+            //};
+            //i = await dataConnection.SaveItemAsync(k1);
+            //Kleuter k2 = new Kleuter
+            //{
+            //    Naam = "Kaan123",
+            //    VoorNaam = "Akpinar",
+            //};
+            //i = await dataConnection.SaveItemAsync(k2);
+
+            //foreach (Kleuter k in test)
+            //{
+            //    int i = await dataConnection.SaveItemAsync(k);
+            //}
+        }
+        private async void test(Task<List<Kleuter>> lijst)
+        {
+            List <Kleuter> kleuters = await lijst;
+            foreach(Kleuter k in kleuters)
+            {
+                string x = k.VoorNaam + " " + k.Naam;
+            }
         }
     }
 }
