@@ -31,17 +31,17 @@ namespace TestProjectMobiele.ViewModels
             get { return fotopaden; }
             set { SetProperty(ref fotopaden, value); }
         }
-        public async override void OnNavigatedTo(NavigationParameters parameters)
-        {
-            Fotos = await dataConnection.LoadFotos();
-            foreach(Foto f in Fotos)
-            {
-                if(f.FotoPad == "")
-                {
-                    Fotopaden.Add(f.FotoPad);
-                }
-            }
+        //public async override void OnNavigatedTo(NavigationParameters parameters)
+        //{
+        //    Fotos = await dataConnection.LoadFotos();
+        //    foreach(Foto f in Fotos)
+        //    {
+        //        if(f.FotoPad == "")
+        //        {
+        //            Fotopaden.Add(f.FotoPad);
+        //        }
+        //    }
 
-        }
+        //}
     }
 }
