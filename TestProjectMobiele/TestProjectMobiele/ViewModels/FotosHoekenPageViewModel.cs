@@ -25,22 +25,22 @@ namespace TestProjectMobiele.ViewModels
             get { return hoeken; }
             set { SetProperty(ref hoeken, value); }
         }
-        //private Hoek selectedItem;
-        //public Hoek SelectedItem
-        //{
-        //    get { return selectedItem; }
-        //    set
-        //    {
-        //        if (SetProperty(ref selectedItem, value) && selectedItem != null)
-        //        {
-        //            var p = new NavigationParameters();
-        //            p.Add("hoek", SelectedItem);
-        //            //p.Add("kleuter", kleuter);
-        //            NavigationService.NavigateAsync("FotosHoekenPage", p);
-        //            SelectedItem = null;
-        //        }
-        //    }
-        //}
+        private Hoek selectedItem;
+        public Hoek SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                if (SetProperty(ref selectedItem, value) && selectedItem != null)
+                {
+                    var p = new NavigationParameters();
+                    p.Add("hoek", SelectedItem);
+                    p.Add("kleuter", kleuter);
+                    NavigationService.NavigateAsync("KleuterFotoTrekkenPage", p);
+                    SelectedItem = null;
+                }
+            }
+        }
         public async override void OnNavigatedTo(NavigationParameters parameters)
         {
             Hoeken = await dataConnection.LoadHoeken();

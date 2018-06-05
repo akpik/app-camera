@@ -43,6 +43,7 @@ namespace TestProjectMobiele
             containerRegistry.Register<ILoadAllData, LoadAllData>();
           
             containerRegistry.RegisterForNavigation<FotosHoekenPage>();
+            containerRegistry.RegisterForNavigation<KleuterFotoTrekkenPage>();
         }
     }
 }

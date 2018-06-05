@@ -60,7 +60,7 @@ namespace TestProjectMobiele.ViewModels
             //     blup += k.VoorNaam;
             //}
             //await dialogService.DisplayAlertAsync("Alle Kleuters", blup, "OK");
-            //Kleuters = await dataConnection.LoadKleuters();
+            Kleuters = await dataConnection.LoadKleuters();
             //string voornaam = "";
             //foreach(Kleuter k in Kleuters)
             //{
