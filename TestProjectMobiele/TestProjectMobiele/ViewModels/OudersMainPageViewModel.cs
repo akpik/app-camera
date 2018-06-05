@@ -18,6 +18,7 @@ namespace TestProjectMobiele.ViewModels
 {
 	public class OudersMainPageViewModel : ViewModelBase
 	{
+        //Gemaakt door Kaan Akpinar
         public ICommand ImageChildClicked { get; private set; }
         public ICommand ImageCameraClicked { get; private set; }
         private IPageDialogService dialogService;

@@ -17,6 +17,7 @@ namespace TestProjectMobiele.ViewModels
 {
 	public class KleuterFotoTrekkenPageViewModel : ViewModelBase
 	{
+        //Gemaakt door Kaan Akpinar
         Kleuter kleuter;
         Hoek hoek;
         ILoadAllData dataConnection;
@@ -124,6 +125,7 @@ namespace TestProjectMobiele.ViewModels
             }
 
         }
+        //Gemaakt door Kaan Akpinar
         public async override void OnNavigatedTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("kleuter"))

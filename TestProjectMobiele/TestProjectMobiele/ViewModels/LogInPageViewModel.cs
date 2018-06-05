@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using TestProjectMobiele.Contracts;
-
+//Gemaakt door Kaan Akpinar
 namespace TestProjectMobiele.ViewModels
 {
 	public class LogInPageViewModel : ViewModelBase

@@ -20,6 +20,7 @@ namespace TestProjectMobiele.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        //Gemaakt door Kaan Akpinar
         private ILoadAllData dataConnection;
         public ICommand ImageHomeClicked { get; private set; }
         public ICommand ImageSchoolClicked { get; private set; }
@@ -53,31 +54,12 @@ namespace TestProjectMobiele.ViewModels
 
 
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
-            test(kl);
         }
        
         private async void Prefab()
         {
             LoadPreFab preFab = new LoadPreFab(dataConnection);
             preFab.SaveKleuters();
-            
-            //Kleuter k1 = new Kleuter
-            //{
-            //    Naam = "Daan123",
-            //    VoorNaam = "Vancebosch",
-            //};
-            //i = await dataConnection.SaveItemAsync(k1);
-            //Kleuter k2 = new Kleuter
-            //{
-            //    Naam = "Kaan123",
-            //    VoorNaam = "Akpinar",
-            //};
-            //i = await dataConnection.SaveItemAsync(k2);
-
-            //foreach (Kleuter k in test)
-            //{
-            //    int i = await dataConnection.SaveItemAsync(k);
-            //}
         }
     }
 }

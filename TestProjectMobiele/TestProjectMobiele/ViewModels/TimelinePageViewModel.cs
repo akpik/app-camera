@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-
+//Gemaakt door Kaan Akpinar
 namespace TestProjectMobiele.ViewModels
 {
 	public class TimelinePageViewModel : ViewModelBase

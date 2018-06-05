@@ -24,7 +24,7 @@ namespace TestProjectMobiele.Data
             Kleuter k = new Kleuter
             {
                 KleuterID = 5000,
-                VoorNaam = "Naam1",
+                VoorNaam = "Kleuter1",
                 Naam = "Vandebosch",
                 SchoolID = 0,
                 FotoPad = "FotoString",
@@ -36,11 +36,11 @@ namespace TestProjectMobiele.Data
             Kleuter k2 = new Kleuter
             {
                 KleuterID = 5001,
-                VoorNaam = "Naam3",
-                Naam = "Nlsdg",
+                VoorNaam = "Kleuter2",
+                Naam = "Familienaam",
                 SchoolID = 2,
                 FotoPad = "FotoString",
-                GezinsID = 5001,
+                GezinsID = 5002,
                 KlasID = 5000
             };
             await dataConnection.SaveKleuterAsync(k2);
@@ -48,11 +48,11 @@ namespace TestProjectMobiele.Data
             Kleuter k3 = new Kleuter
             {
                 KleuterID = 5002,
-                VoorNaam = "Naam2",
+                VoorNaam = "Naam3",
                 Naam = "Akpinar",
                 SchoolID = 1,
                 FotoPad = "FotoString",
-                GezinsID = 5002,
+                GezinsID = 5001,
                 KlasID = 5000
             };
             await dataConnection.SaveKleuterAsync(k3);

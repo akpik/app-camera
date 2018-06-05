@@ -18,6 +18,7 @@ namespace TestProjectMobiele.ViewModels
 {
 	public class FotosKleutersPageViewModel : ViewModelBase
 	{
+        //Gemaakt door Kaan Akpinar
         public ICommand ImageKleuterClicked { get; private set; }
         ILoadAllData dataConnection;
         private IPageDialogService dialogService;

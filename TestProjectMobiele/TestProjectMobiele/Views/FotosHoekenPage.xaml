@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Author Kaan Akpinar-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
@@ -13,11 +14,6 @@
                 <ViewCell>
                     <StackLayout Margin="20,0,0,0" Orientation="Horizontal">
                         <Label Text="{Binding Naam}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                        <!--<Image IsVisible="{Binding Done}" HorizontalOptions="End">
-                            <Image.Source>
-                                <OnPlatform x:TypeArguments="ImageSource" iOS="ic_done.png" Android="ic_done_black_24dp.png" />
-                            </Image.Source>
-                        </Image>-->
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
