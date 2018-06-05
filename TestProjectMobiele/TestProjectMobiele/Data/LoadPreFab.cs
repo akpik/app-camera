@@ -83,7 +83,7 @@ namespace TestProjectMobiele.Data
             Hoek h1 = new Hoek
             {
                 HoekID = 5000,
-                Naam = "Kaan kelder",
+                Naam = "Bouwhoek",
                 FotoPad = "KaanKelder",
                 SchoolID = 0,
                 KlasID = 5000,
@@ -93,7 +93,7 @@ namespace TestProjectMobiele.Data
             Hoek h2 = new Hoek
             {
                 HoekID = 5001,
-                Naam = "Kaan zolder",
+                Naam = "Speelhoek",
                 FotoPad = "KaanZolder",
                 SchoolID = 0,
                 KlasID = 5000,

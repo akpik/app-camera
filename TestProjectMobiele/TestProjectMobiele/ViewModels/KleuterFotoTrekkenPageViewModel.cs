@@ -111,11 +111,12 @@ namespace TestProjectMobiele.ViewModels
                 //Database storage
                 Foto f = new Foto
                 {
-                    FotoID = id+1,
+                    FotoID = id + 1,
                     KleuterID = kleuter.KleuterID,
                     FotoPad = downloadUrl,
                     Datum = DateTime.Now.ToString(),
                     HoekID = hoek.HoekID,
+                    HoekNaam = hoek.Naam,
                 };
                 await dataConnection.SaveFotoAsync(f);
             }
