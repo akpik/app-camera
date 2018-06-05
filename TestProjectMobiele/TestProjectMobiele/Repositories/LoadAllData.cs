@@ -71,6 +71,13 @@ namespace TestProjectMobiele
             return await dbContext.SaveChangesAsync();
         }
 
+        public async Task<int> SaveFotoAsync(Foto item)
+        {
+            await dbContext.tblfoto.AddAsync(item);
+
+            return await dbContext.SaveChangesAsync();
+        }
+
         public async void DeleteAllData()
         {
             int i = await DeleteAllKleutersAsync();

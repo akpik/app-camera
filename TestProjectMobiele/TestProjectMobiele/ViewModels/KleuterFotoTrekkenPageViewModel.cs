@@ -1,4 +1,6 @@
-﻿using Plugin.Media;
+﻿using Firebase.Auth;
+using Firebase.Storage;
+using Plugin.Media;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -6,6 +8,7 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using TestProjectMobiele.Contracts;
 using Xamarin.Forms;
@@ -57,6 +60,68 @@ namespace TestProjectMobiele.ViewModels
                 var stream = file.GetStream();
                 return stream;
             });
+
+            
+            int id = 0;
+            foreach(Foto foto in await dataConnection.LoadFotos())
+            {
+                if (foto.FotoID >= id)
+                {
+                    id = foto.FotoID;
+                }
+            }
+
+            //Firebase
+            try
+            {
+                string ApiKey = "AIzaSyD41S0qRV0dw0c7aoqKGjsnw8m6hSdR8QI";
+                string Bucket = "mobileapps-11044.appspot.com";
+                string AuthEmail = "test@test.be";
+                string AuthPassword = "test123";
+
+                // of course you can login using other method, not just email+password
+                var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
+                var a = await auth.SignInWithEmailAndPasswordAsync(AuthEmail, AuthPassword);
+
+                //Firebase Upload
+                // Constructr FirebaseStorage, path to where you want to upload the file and Put it there
+                var task = new FirebaseStorage(
+                    Bucket,
+                    new FirebaseStorageOptions
+                    {
+                        AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),
+                    })
+                    .Child("UCLL")
+                    .Child("ICT)")
+                    .Child((id + 1).ToString())
+                    .PutAsync(file.GetStream());
+
+                // Track progress of the upload
+                //task.Progress.ProgressChanged += (s, e) => Console.WriteLine($"Progress: {e.Percentage} %");
+
+                // await the task to wait until upload completes and get the download url
+                var downloadUrl = await task;
+                await dialogService.DisplayAlertAsync("Download Url", downloadUrl, "OK");
+
+                //Firebase download
+                Source = downloadUrl;
+
+                //Database storage
+                Foto f = new Foto
+                {
+                    FotoID = id+1,
+                    KleuterID = kleuter.KleuterID,
+                    FotoPad = downloadUrl,
+                    Datum = DateTime.Now.ToString(),
+                    HoekID = hoek.HoekID,
+                };
+                await dataConnection.SaveFotoAsync(f);
+            }
+            catch (Exception ex)
+            {
+                await dialogService.DisplayAlertAsync("Exception was thrown", ex.Message, "OK");
+            }
+
         }
         public async override void OnNavigatedTo(NavigationParameters parameters)
         {
