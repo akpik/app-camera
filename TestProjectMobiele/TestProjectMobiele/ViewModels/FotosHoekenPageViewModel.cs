@@ -48,7 +48,7 @@ namespace TestProjectMobiele.ViewModels
             {
                 kleuter = (Kleuter)parameters["kleuter"];
             }
-            await dialogService.DisplayAlertAsync("Geselecteerde kleuter", kleuter.Naam +" " +kleuter.VoorNaam, "OK");
+            await dialogService.DisplayAlertAsync("Geselecteerde kleuter",""+ kleuter.GezinsID, "OK");
 
         }
     }
