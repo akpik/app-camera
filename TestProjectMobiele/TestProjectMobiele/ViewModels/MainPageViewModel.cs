@@ -64,15 +64,9 @@ namespace TestProjectMobiele.ViewModels
             }
         }
        
-        private async Task<int> test(Task<List<Kleuter>> k)
+        private async void test(Kleuter k)
         {
-            List<Kleuter> kleu = await k;
-            foreach (Kleuter kl in kleu)
-            {
-                string x = kl.Naam;
-            }
-            return 0;
+            await dataConnection.SaveItemAsync(k);
         }
-
     }
 }
