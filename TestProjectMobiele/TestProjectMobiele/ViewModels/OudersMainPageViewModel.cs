@@ -60,8 +60,8 @@ namespace TestProjectMobiele.ViewModels
             {
                 string ApiKey = "AIzaSyD41S0qRV0dw0c7aoqKGjsnw8m6hSdR8QI";
                 string Bucket = "mobileapps-11044.appspot.com";
-                string AuthEmail = "apps@mobiel.com";
-                string AuthPassword = "apps2018";
+                string AuthEmail = "test@test.be";
+                string AuthPassword = "test123";
 
                 // of course you can login using other method, not just email+password
                 var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
