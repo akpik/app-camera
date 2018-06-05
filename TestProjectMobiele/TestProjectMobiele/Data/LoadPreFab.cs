@@ -14,6 +14,7 @@ namespace TestProjectMobiele.Data
         public LoadPreFab(ILoadAllData dataConnection)
         {
             this.dataConnection = dataConnection;
+            dataConnection.DeleteAllData();
         }
 
         public async void SaveKleuters()

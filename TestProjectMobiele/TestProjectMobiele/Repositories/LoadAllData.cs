@@ -70,5 +70,39 @@ namespace TestProjectMobiele
 
             return await dbContext.SaveChangesAsync();
         }
+
+        public async void DeleteAllData()
+        {
+            int i = await DeleteAllKleutersAsync();
+            i = await DeleteAllGezinnenAsync();
+            i = await DeleteAllHoekenAsync();
+        }
+
+        public async Task<int> DeleteAllKleutersAsync()
+        {
+            foreach(Kleuter k in await LoadKleuters())
+            {
+                dbContext.tblkleuter.Remove(k);
+            }
+            return await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<int> DeleteAllGezinnenAsync()
+        {
+            foreach (Gezin g in await LoadGezinnen())
+            {
+                dbContext.tblgezin.Remove(g);
+            }
+            return await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<int> DeleteAllHoekenAsync()
+        {
+            foreach (Hoek h in await LoadHoeken())
+            {
+                dbContext.tblhoek.Remove(h);
+            }
+            return await dbContext.SaveChangesAsync();
+        }
     }
 }
