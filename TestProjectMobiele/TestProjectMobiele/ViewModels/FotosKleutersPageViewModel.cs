@@ -28,6 +28,21 @@ namespace TestProjectMobiele.ViewModels
             this.dialogService = dialogService;
             //Kleuters = new ObservableCollection<Kleuter>();
         }
+        private Kleuter selectedItem;
+        public Kleuter SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                if (SetProperty(ref selectedItem, value) && selectedItem != null)
+                {
+                    var p = new NavigationParameters();
+                    p.Add("kleuter", SelectedItem);
+                    NavigationService.NavigateAsync("FotosHoekenPage", p);
+                    SelectedItem = null;
+                }
+            }
+        }
 
         private IList<Kleuter> kleuters;
         public IList<Kleuter>  Kleuters
