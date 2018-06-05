@@ -13,6 +13,8 @@ namespace TestProjectMobiele
         public int HoekID { get; set; }
         public string Naam { get; set; }
         public string FotoPad { get; set; }
+
+        //Relations
         public int SchoolID { get; set; }
         public int KlasID { get; set; }
     }

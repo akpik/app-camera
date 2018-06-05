@@ -14,7 +14,6 @@ using System.IO;
 using Firebase.Storage;
 using TestProjectMobiele.Contracts;
 using Prism.Events;
-using TestProjectMobiele.Events;
 using TestProjectMobiele.Data;
 
 namespace TestProjectMobiele.ViewModels
