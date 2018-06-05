@@ -8,6 +8,7 @@ namespace TestProjectMobiele
 {
     public class Hoek
     {
+        //Gemaakt door Daan Vandebosch
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int HoekID { get; set; }

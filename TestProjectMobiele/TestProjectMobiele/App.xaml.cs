@@ -38,12 +38,13 @@ namespace TestProjectMobiele
             containerRegistry.RegisterForNavigation<FotosKleutersPage>();
             containerRegistry.RegisterForNavigation<OudersMainPage>();
             containerRegistry.RegisterForNavigation<TimelinePage>();
-        
-            containerRegistry.Register<IDataConnection, DataConnection>();
-            containerRegistry.Register<ILoadAllData, LoadAllData>();
-          
             containerRegistry.RegisterForNavigation<FotosHoekenPage>();
             containerRegistry.RegisterForNavigation<KleuterFotoTrekkenPage>();
+
+            //Gemaakt door Daan Vandebosch
+            containerRegistry.Register<IDataConnection, DataConnection>();
+            containerRegistry.Register<ILoadAllData, LoadAllData>();
+           
         }
     }
 }

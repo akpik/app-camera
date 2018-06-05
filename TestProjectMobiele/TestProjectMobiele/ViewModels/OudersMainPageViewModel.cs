@@ -63,8 +63,9 @@ namespace TestProjectMobiele.ViewModels
 
             if (file == null)
                 return;
-            
+
             //Firebase
+            //Gemaakt door Daan Vandebosch
             try
             {
                 string ApiKey = "AIzaSyD41S0qRV0dw0c7aoqKGjsnw8m6hSdR8QI";

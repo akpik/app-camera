@@ -8,6 +8,7 @@ namespace TestProjectMobiele
 {
     public class School
     {
+        //Gemaakt door Daan Vandebosch
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SchoolID { get; set; }

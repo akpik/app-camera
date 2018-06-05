@@ -8,6 +8,7 @@ namespace TestProjectMobiele.Data
 {
     class LoadPreFab
     {
+        //Gemaakt door Daan Vandebosch
         private List<Kleuter> kleuters = new List<Kleuter>();
         private ILoadAllData dataConnection;
 

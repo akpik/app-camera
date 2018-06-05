@@ -4,6 +4,7 @@ using TestProjectMobiele;
 
 namespace TestProjectMobieles.Data
 {
+    //Gemaakt door Daan Vandebosch
     public class DataConnection : DbContext, IDataConnection
     {
         public DbSet<Foto> tblfoto { get; set; }
@@ -18,7 +19,7 @@ namespace TestProjectMobieles.Data
 
         public DataConnection(IFileHelper fileHelper)
         {
-            string databasePath = fileHelper.GetLocalFilePath("TodoSQLite52199999.db3");
+            string databasePath = fileHelper.GetLocalFilePath("SQLite.db3");
             connectionString = string.Format("Filename={0}", databasePath); 
 
             Database.EnsureCreated();
@@ -38,10 +39,6 @@ namespace TestProjectMobieles.Data
                 string x = ex.Message;
             }
             
-        }
-        public void DeleteDatabase()
-        {
-            Database.EnsureDeleted();
         }
     }
 }
