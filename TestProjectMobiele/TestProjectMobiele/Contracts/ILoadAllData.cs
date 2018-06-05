@@ -18,5 +18,11 @@ namespace TestProjectMobiele.Contracts
         Task<int> SaveKleuterAsync(Kleuter item);
         Task<int> SaveGezinAsync(Gezin item);
         Task<int> SaveHoekAsync(Hoek item);
+
+        void DeleteAllData();
+
+        Task<int> DeleteAllKleutersAsync();
+        Task<int> DeleteAllGezinnenAsync();
+        Task<int> DeleteAllHoekenAsync();
     }
 }
