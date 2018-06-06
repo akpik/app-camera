@@ -19,6 +19,7 @@ namespace TestProjectMobiele.UWP
 {
     public sealed partial class MainPage
     {
+        //laaste versie
         public MainPage()
         {
             this.InitializeComponent();
