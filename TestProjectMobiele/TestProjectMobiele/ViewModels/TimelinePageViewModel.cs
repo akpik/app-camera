@@ -58,8 +58,6 @@ namespace TestProjectMobiele.ViewModels
                 }
             }
             Fotos = fotolijst;
-            await dialogService.DisplayAlertAsync("Alle Fotopaden van dit gezin", fotop, "OK");
-
         }
     }
 }
