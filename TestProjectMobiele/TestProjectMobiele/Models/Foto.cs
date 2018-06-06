@@ -15,7 +15,6 @@ namespace TestProjectMobiele
         public int FotoID { get; set; }
         public string FotoPad { get; set; }
         public string Datum { get; set; }
-        public string HoekNaam { get; set; }
 
         //Relations
         public int KleuterID { get; set; }

@@ -47,6 +47,7 @@ namespace TestProjectMobiele.ViewModels
 
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
+                CompressionQuality = 30,
                 Directory = "Sample",
                 Name = "test.jpg"
             });
@@ -116,7 +117,6 @@ namespace TestProjectMobiele.ViewModels
                     FotoPad = downloadUrl,
                     Datum = DateTime.Now.ToString(),
                     HoekID = hoek.HoekID,
-                    HoekNaam = hoek.Naam,
                 };
                 await dataConnection.SaveFotoAsync(f);
             }
